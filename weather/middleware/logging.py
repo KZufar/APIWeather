@@ -22,8 +22,7 @@ class LoggingMiddleware:
             path=request.path,
             query_params=request.GET.dict(),
             request_method=request.method,
-            # response=response.data if response.status_code == 200 else response.content.decode('utf-8'),
-            response=response.data,
+            response=response.data if 'data' in response.__dict__ else response.content.decode('utf-8'),
             status_code=response.status_code,
         )
 

@@ -50,7 +50,7 @@ class WeatherService:
             'extra': False
         }
 
-        print('Получение погоды от Яндекса!')
+        print('Получение погоды от Яндекса...')
 
         response = requests.get(
             url='https://api.weather.yandex.ru/v2/forecast',
