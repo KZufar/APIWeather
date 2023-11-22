@@ -96,4 +96,4 @@ class Command(BaseCommand):
 
         app.add_handler(MessageHandler(filters.TEXT, handle_message))
 
-        app.run_polling()
+        app.run_polling(allowed_updates=Update.ALL_TYPES)

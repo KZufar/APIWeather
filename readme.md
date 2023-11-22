@@ -17,11 +17,11 @@
 
 `pip install -r requirements.txt`
 
-`python manage.py runserver`
-
 `python manage.py migrate`
 
 `python manage.py createsuperuser`
+
+`python manage.py runserver`
 
 `python manage.py bot`
 
@@ -29,8 +29,8 @@
 
 ### С помощью Docker
 
-`docker compose up`
+`docker compose up -d --build`
 
-`docker compose run django python manage.py migrate`
+`docker compose run web python manage.py migrate`
 
-`docker compose run django python manage.py createsuperuser`
+`docker compose run web python manage.py createsuperuser`

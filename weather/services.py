@@ -50,7 +50,7 @@ class WeatherService:
             'extra': False
         }
 
-        print('Получение погоды от Яндекса...')
+        print(f'Получение погоды от Яндекс API для города {city_name} ...')
 
         response = requests.get(
             url='https://api.weather.yandex.ru/v2/forecast',
@@ -67,6 +67,7 @@ class WeatherService:
 
             cache.set(cache_key, weather_data, timeout=settings.CACHE_TIMEOUT_FOR_API_YANDEX)
 
+            print(f'Информация о погоде успешно получена!')
             return weather_data
         else:
             raise Exception('Проверьте X-Yandex-API-Key и попробуйте еще раз!')
